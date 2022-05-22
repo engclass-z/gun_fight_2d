@@ -1,0 +1,8 @@
+@import 'src/lib/mixin/color';
+
+.MainTag {
+  & {
+    height: calc(100% - 60px - 84px);
+    padding-bottom: 84px;
+  }
+}
