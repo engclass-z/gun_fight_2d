@@ -1,5 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
 import { Buffer } from 'buffer';
+
+import { NextRequest, NextResponse } from 'next/server';
+
 import { basicAuthConfig } from '../config/config';
 
 export function middleware(req: NextRequest) {

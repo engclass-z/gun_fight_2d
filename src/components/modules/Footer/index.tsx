@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
  * フッター
  */
 export const Footer: FCC = ({ className }) => (
-  <footer className={styles.Footer}>
+  <footer className={`${styles.Footer} ${className}`}>
     <small>Powered by ***</small>
   </footer>
 );
