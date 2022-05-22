@@ -15,8 +15,8 @@
     "prettier": "prettier --write pages src"
   },
   "lint-staged": {
-    "**/*.scss": "stylelint --fix --cache --config .stylelintrc.json",
-    "**/*.{ts,tsx}": "eslint --fix --cache",
+    "**/*.scss": "stylelint --fix --config .stylelintrc.json",
+    "**/*.{ts,tsx}": "eslint --fix",
     "*.{ts,tsx}": "prettier --write"
   },
   "dependencies": {
