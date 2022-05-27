@@ -1,0 +1,17 @@
+.Character {
+  & &__inner {
+    display: inline-flex;
+    width: 64px;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & &__image {
+    width: 32px;
+    height: 32px;
+    object-fit: none;
+    transform: scale(2);
+    transform-origin: center center;
+  }
+}
