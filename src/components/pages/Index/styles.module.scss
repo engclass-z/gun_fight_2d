@@ -27,6 +27,12 @@
     transform: translate(-50%, -50%);
   }
 
+  & &__damageArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   & &__charaArea {
     display: flex;
     justify-content: center;
@@ -52,5 +58,23 @@
     outline: none;
     padding: 0;
     appearance: none;
+  }
+
+  & &__bullet {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    transform: translate(-50%, -50%);
+    background: #ffff00;
+    border-radius: 50%;
+  }
+
+  & &__enemyBullet {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    transform: translate(-50%, -50%);
+    background: #ff00ff;
+    border-radius: 50%;
   }
 }

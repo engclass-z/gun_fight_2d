@@ -10,7 +10,17 @@ import styles from './styles.module.scss';
  * トップページ
  */
 export const IndexPage: FCC = () => {
-  const { me, enemy, join, selectCharacter } = useRealtimeDatabase();
+  const {
+    me,
+    enemy,
+    bullets,
+    enemyBullets,
+    enemyBulletsHitIndexes,
+    myDamageCount,
+    enemyDamageCount,
+    join,
+    selectCharacter,
+  } = useRealtimeDatabase();
 
   return (
     <section className={styles.IndexPage}>
@@ -26,7 +36,29 @@ export const IndexPage: FCC = () => {
               <Character id={enemy.character} direction={enemy.direction} />
             </div>
           )}
+          {bullets.map((bullet, i) =>
+            bullet.x > 20 && bullet.x < 620 ? (
+              <div
+                key={i}
+                className={styles.IndexPage__bullet}
+                style={{ left: bullet.x, bottom: bullet.y }}
+              />
+            ) : null
+          )}
+          {enemyBullets.map((bullet, i) =>
+            bullet.x > 20 && bullet.x < 620 && !enemyBulletsHitIndexes.includes(i) ? (
+              <div
+                key={i}
+                className={styles.IndexPage__enemyBullet}
+                style={{ left: bullet.x, bottom: bullet.y }}
+              />
+            ) : null
+          )}
         </div>
+      </div>
+      <div className={styles.IndexPage__damageArea}>
+        <p>{`自分のダメージ回数: ${myDamageCount}`}</p>
+        <p>{`敵のダメージ回数: ${enemyDamageCount}`}</p>
       </div>
       <div className={styles.IndexPage__buttonArea}>
         <button type="button" onClick={join}>
